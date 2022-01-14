@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(   
+    return MaterialApp(
       themeMode: ThemeMode.system,
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.blueGrey,
       ),
       darkTheme: ThemeData(brightness: Brightness.dark),
       routes: {

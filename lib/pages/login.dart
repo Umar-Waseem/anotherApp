@@ -21,7 +21,9 @@ class _LoginPageState extends State<LoginPage> {
         key: _formKey,
         child: Column(
           children: [
-            const CircleAvatar(backgroundImage: AssetImage('images/login.jpg')),
+            const CircleAvatar(
+                backgroundImage: NetworkImage(
+                    'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg')),
             const SizedBox(height: 15.0),
             Text('Welcome $name',
                 style: const TextStyle(
@@ -44,10 +46,8 @@ class _LoginPageState extends State<LoginPage> {
                         if (value == null || value.isEmpty) {
                           return 'Please enter the username';
                         }
-                        
-                          return null;
-                        
-                        
+
+                        return null;
                       },
                     ),
                     TextFormField(
@@ -103,21 +103,16 @@ class _LoginPageState extends State<LoginPage> {
     if (_formKey.currentState!.validate()) {
       setState(() {
         buttonChanged = true;
-        
-      }
-      );
+      });
       await Future.delayed(const Duration(seconds: 1));
       await Navigator.pushNamed(context, route.home);
       setState(() {
         buttonChanged = false;
       });
-      
-    }
-    else{
+    } else {
       setState(() {
         buttonChanged = false;
       });
     }
-
   }
 }
